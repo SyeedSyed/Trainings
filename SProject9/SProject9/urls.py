@@ -1,4 +1,4 @@
-"""Project4 URL Configuration
+"""SProject9 URL Configuration
 
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/3.2/topics/http/urls/
@@ -15,9 +15,10 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from app4 import views
+from app9 import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', views.showIndex)
+    path('', views.showIndex),
+    path('register/', views.registerUser),
 ]
