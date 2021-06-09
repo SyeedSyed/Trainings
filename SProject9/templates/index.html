@@ -5,17 +5,32 @@
     <title>Example9</title>
 </head>
 <body>
-    <h1>Welcome to Pycharm</h1>
+    <h1 align="center">Login Page</h1>
     <form method="post" action="/register/">
 
         {% csrf_token %}
-
-        <input type="text" placeholder="First Name" name = "x1">
-        <br><br>
-        <input type="text" placeholder="Last Name" name = "x2">
-        <br><br>
-
-        <button name="submit"> Register </button>
+        <table align="center" border="2" bgcolor="teal">
+            <tr>
+                <th colspan="2">Login</th>
+            </tr>
+            <tr>
+                <td>User ID</td>
+                <td>
+                    <input type="text" placeholder="UserId" name = "x1" required>
+                </td>
+            </tr>
+            <tr>
+                <td>Password</td>
+                <td>
+                    <input type="text" placeholder="Password" name = "x2" required>
+                </td>
+            </tr>
+            <tr>
+                <th colspan="2">
+                    <button name="Login"> Login </button>
+                </th>
+            </tr>
+        </table>
 
     </form>
 </body>
