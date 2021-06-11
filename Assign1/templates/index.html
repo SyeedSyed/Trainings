@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login Page</title>
+</head>
+<body>
+    <form method="post" action="/index/">
+        {% csrf_token %}
+        {% if status == 'valid' %}
+            <h1>Welcome User</h1>
+        {% elif status == 'invalid' %}
+            <h1>Invalid User</h1>
+        {% else %}
+            <table align="center" border="2" bgcolor="#7fffd4">
+            <tr colspan="2">
+                <th colspan="2">Login</th>
+            </tr>
+            <tr>
+                <th>Username</th>
+                <th>
+                    <input type="text" placeholder="Username" name="t1" required>
+                </th>
+            </tr>
+            <tr>
+                <th>Password</th>
+                <th>
+                    <input type="password" placeholder="password" name="t2" required>
+                </th>
+            </tr>
+            <tr>
+                <th>Type</th>
+                <td>
+                   <select id="type" name="type">
+                       <option>Admin</option>
+                       <option>Employee</option>
+                       <option>Customer</option>
+                   </select>
+                </td>
+            </tr>
+            <tr colspan="2">
+                <th colspan="2">
+                    <input type="submit">
+                </th>
+            </tr>
+        </table>
+        {% endif %}
+    </form>
+</body>
+</html>
