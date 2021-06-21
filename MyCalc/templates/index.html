@@ -1,8 +1,10 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>Calulator</title>
+    <link rel="stylesheet" href="{% static 'css/mystyle.css' %}"></link>
 </head>
 <body>
     <form method = "post" action = "/index/">
@@ -21,18 +23,20 @@
                 </td>
             </tr>
             <tr>
-                <td>
-                    <input type = "submit" name = "opr" value="+">
+                <td width="10">
+                    <button type="submit" name="opr" value="add" class="_button"> + </button>
+{#                    <input type = "submit" name = "opr" value="+">add</td>#}
                 </td>
-                <td>
-                    <input type = "submit" name = "opr" value = "-">
+                <td width="50">
+                    <button type="submit" name="opr" value="sub" class="_button"> - </button>
                 </td>
-                <td>
-                    <input type = "submit" name = "opr" value = "*">
+                <td width="10">
+                    <button type="submit" name="opr" value="mul" class="_button"> * </button>
                 </td>
-                <td>
-                    <input type = "submit" name = "opr" value = "%">
+                <td width="50">
+                    <button type="submit" name="opr" value="div" class="_button"> % </button>
                 </td>
+
             </tr>
             <tr>
                 <th colspan="2">Result : </th>

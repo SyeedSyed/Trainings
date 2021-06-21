@@ -1,0 +1,46 @@
+{% extends 'common.html' %}
+
+{% block menu %}
+    {% include 'main_menu.html' %}
+{% endblock %}
+
+{% block content %}
+    {% load static %}
+
+    <div style =
+                 "padding: 10px;
+                 width: 300px;
+                 border: #000680;
+                 color: azure;
+                 background-color: #1c5316;
+                 border-radius: 20px;
+                 ">
+        Login Page
+    </div>
+    <form action="{% url 'login' %}" method="post">
+    {% csrf_token %}
+        <div>
+            <div style="padding: 10px;">
+                <input type = "email" name = "email" placeholder="email" style="border-radius: 5px" required>
+            </div>
+            <div style="padding: 10px;">
+                <input type = "password" name = "password" placeholder="Password" style="border-radius: 5px" required>
+            </div>
+            <div style="padding: 10px;">
+                <input type = "submit" style="border-radius: 5px">
+            </div>
+            {% if err_msg %}
+                <div class="alert alert-danger" role="alert">
+                    {{  err_msg }}
+                </div>
+            {% endif %}
+            {% if so_msg %}
+                <div class="alert alert-warning" role="alert">
+                    {{  so_msg }}
+                </div>
+            {% endif %}
+
+        </div>
+    </form>
+
+{% endblock %}

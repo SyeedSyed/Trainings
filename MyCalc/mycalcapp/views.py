@@ -9,17 +9,17 @@ def showCalc(request):
         print(sno)
         print(opr)
 
-        if(opr == "+"):
+        if(opr == "add"):
             result = fno + sno
             print(result)
             return render(request, "index.html", {"opr": result})
-        elif(opr == "-"):
+        elif(opr == "sub"):
             result = fno - sno
             return render(request, "index.html", {"opr": result})
-        elif(opr == "*"):
+        elif(opr == "mul"):
             result = fno * sno
             return render(request, "index.html", {"opr": result})
-        elif(opr == "%"):
+        elif(opr == "div"):
             result = fno/sno
             return render(request, "index.html", {"opr": result})
 

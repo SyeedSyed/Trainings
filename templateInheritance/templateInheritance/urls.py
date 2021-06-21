@@ -1,4 +1,4 @@
-"""MyCalc URL Configuration
+"""templateInheritance URL Configuration
 
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/3.2/topics/http/urls/
@@ -15,10 +15,15 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from mycalcapp import views
+from inherapp import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', views.showCalc),
-    path('index/', views.showCalc),
+    path('index/', views.showIndex,name = 'index'),
+    path('register/', views.showRegister, name = 'register'),
+    path('loginPage/', views.showLogin,name = 'login'),
+    path('userHome/', views.showUserHome,name = 'userhome'),
+    path('manager/', views.showManager,name = 'manager'),
+    path('employee/', views.showEmployee,name = 'employee'),
+    path('signout/', views.showSignout,name = 'signout'),
 ]

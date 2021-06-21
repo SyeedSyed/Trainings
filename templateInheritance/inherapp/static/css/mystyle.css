@@ -1,0 +1,11 @@
+
+.main_menu{
+    border-radius: 20px;
+    font-family: "Comic Sans MS";
+}
+
+.user_menu{
+    border-radius: 20px;
+    font-family: Helvetica;
+    color: azure;
+}

@@ -1,0 +1,56 @@
+{% extends 'common.html' %}
+
+{% block menu %}
+    {% include 'main_menu.html' %}
+{% endblock %}
+
+{% block content %}
+    {% load static %}
+
+    <div style =
+                 "padding: 10px;
+                 width: 300px;
+                 border: #000680;
+                 color: azure;
+                 background-color: #0048ff;
+                 border-radius: 20px;
+                 ">
+        Registration Page
+    </div>
+    <form action="{% url 'register' %}" method="post">
+    {% csrf_token %}
+        <div>
+            <div style="padding: 10px;">
+                <input type = "text" name = "name" placeholder="Name" style="border-radius: 5px" required>
+            </div>
+            <div style="padding: 10px;">
+                <input type = "number"  name = "contact" placeholder="Contact Number" style="border-radius: 5px" required>
+            </div>
+            <div style="padding: 10px;">
+                <input type = "text" name = "location" placeholder="Location" style="border-radius: 5px" required>
+            </div>
+            <div style="padding: 10px;">
+                <input type = "email" name = "email" placeholder="email" style="border-radius: 5px" required>
+            </div>
+            <div style="padding: 10px;">
+                <input type = "password" name = "password" placeholder="Password" style="border-radius: 5px" required>
+            </div>
+            <div style="padding: 10px;">
+                <input type = "submit" style="
+                    border-radius: 5px";>
+            </div>
+            {% if message %}
+            <div style="
+                padding: 10px;
+                background-color: forestgreen;
+                border-radius: 30px;
+                width:300px;">
+                {{ message }}
+            </div>
+            {% endif %}
+
+        </div>
+    </form>
+
+{% endblock %}
+
