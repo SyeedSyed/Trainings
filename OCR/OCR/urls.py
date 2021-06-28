@@ -1,4 +1,4 @@
-"""templateInheritance URL Configuration
+"""OCR URL Configuration
 
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/3.2/topics/http/urls/
@@ -15,15 +15,11 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from inherapp import views
+from django.urls import include
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
-    path('', views.showIndex,name = 'index'),
-    path('register/', views.showRegister, name = 'register'),
-    path('loginPage/', views.showLogin,name = 'login'),
-    path('userHome/', views.showUserHome,name = 'userhome'),
-    path('manager/', views.showManager,name = 'manager'),
-    path('employee/', views.showEmployee,name = 'employee'),
-    path('signout/', views.showSignout,name = 'signout'),
+    path('',include('common.urls')),
+    path('ocr_admin/',include('ocr_admin.urls')),
+    path('faculty/',include('faculty.urls')),
+    path('student/',include('student.urls')),
 ]

@@ -1,0 +1,65 @@
+{% extends 'common/common.html' %}
+
+{% block menu %}
+    {% include 'common/menu.html' %}
+{% endblock %}
+
+{% load static %}
+
+{% block content %}
+    <div class="container">
+
+
+          <div class="row" >
+
+
+                <div class="col inp_form_fac inp_form_reg" style="">
+                    <div class="inp_form_title">
+                              Faculty Registration
+                    </div>
+                   <form action="" method="post" >
+                       {% csrf_token %}
+                       <div class="container">
+                          <div class="row inp_form">
+                              <input type="text" placeholder="name" name ="faculty_name" required>
+                          </div>
+                           <div class="row inp_form">
+                              <input type="email" placeholder="email" name ="faculty_email" required>
+                          </div>
+                           <div class="row inp_form">
+                              <input type="number" placeholder="contact" name ="faculty_contact" required>
+                          </div>
+                           <div class="row inp_form">
+                              <input type="password" placeholder="password" name ="faculty_password" required>
+                          </div>
+                           <div align="center">
+                              <input type="submit" value="Register">
+                          </div>
+                       </div>
+
+                   </form>
+                </div>
+                <div class="col inp_form_fac inp_form_log">
+                    <div class="inp_form_title">
+                              Faculty Login
+                    </div>
+                   <form action="" method="post">
+                       {% csrf_token %}
+                       <div class="container">
+                           <div class="row inp_form">
+                              <input type="email" placeholder="email" name ="faculty_email" required>
+                          </div>
+                           <div class="row inp_form">
+                              <input type="password" placeholder="password" name ="faculty_password" required>
+                          </div>
+                           <div align="center">
+                              <input type="submit" value="Login">
+                          </div>
+                       </div>
+
+                   </form>
+                </div>
+
+          </div>
+    </div>
+{% endblock %}

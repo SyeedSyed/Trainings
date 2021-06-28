@@ -1,0 +1,71 @@
+{% extends 'common/common.html' %}
+
+{% block menu %}
+    {% include 'common/menu.html' %}
+{% endblock %}
+
+{% load static %}
+
+{% block content %}
+    <div class="container">
+
+
+          <div class="row">
+
+
+                <div class="col inp_form_std inp_form_reg" style="">
+                    <div class="inp_form_title">
+                              Student Registration
+                    </div>
+                   <form action="{% url 'student_registration' %}" method="post" >
+                       {% csrf_token %}
+                       <div class="container">
+                          <div class="row inp_form">
+                              <input type="text" placeholder="name" name ="student_name">
+                          </div>
+                           <div class="row inp_form">
+                              <input type="email" placeholder="email" name ="student_email">
+                          </div>
+                           <div class="row inp_form">
+                              <input type="number" placeholder="contact" name ="student_contact">
+                          </div>
+                           <div class="row inp_form">
+                              <input type="password" placeholder="password" name ="student_password">
+                          </div>
+                           <div align="center">
+                              <input type="submit" value="Register">
+                          </div>
+                           {% if message %}
+                            <div class="inp_form_title text-danger">
+                                      {{ message }}
+                            </div>
+                            {% endif %}
+                       </div>
+
+                   </form>
+                </div>
+                <div class="col inp_form_std inp_form_log">
+                    <div class="inp_form_title">
+                              Student Login
+                    </div>
+                   <form action="" method="post">
+                       {% csrf_token %}
+                       <div class="container">
+                           <div class="row inp_form">
+                              <input type="email" placeholder="email" name ="student_email" required>
+                          </div>
+                           <div class="row inp_form">
+                              <input type="password" placeholder="password" name ="student_password" required>
+                          </div>
+                           <div align="center">
+                              <input type="submit" value="Login">
+                          </div>
+
+                       </div>
+
+                   </form>
+                </div>
+
+          </div>
+    </div>
+{% endblock %}

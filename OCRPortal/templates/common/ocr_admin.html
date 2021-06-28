@@ -1,0 +1,61 @@
+{% extends 'common/common.html' %}
+
+{% block menu %}
+    {% include 'common/menu.html' %}
+{% endblock %}
+
+{% load static %}
+
+{% block content %}
+    <div class="container">
+          <div class="row" >
+                <div class="col inp_form_adm inp_form_reg" style="">
+                    <div class="inp_form_title">
+                              Admin Registration
+                    </div>
+                   <form action="" method="post" >
+                       {% csrf_token %}
+                       <div class="container">
+                          <div class="row inp_form">
+                              <input type="text" placeholder="name" name ="admin_name" required>
+                          </div>
+                           <div class="row inp_form">
+                              <input type="email" placeholder="email" name ="admin_email" required>
+                          </div>
+                           <div class="row inp_form">
+                              <input type="number" placeholder="contact" name ="admin_contact" required>
+                          </div>
+                           <div class="row inp_form">
+                              <input type="password" placeholder="password" name ="admin_password" required>
+                          </div>
+                           <div align="center">
+                              <input type="submit" value="Register">
+                          </div>
+                       </div>
+
+                   </form>
+                </div>
+                <div class="col inp_form_adm inp_form_log">
+                    <div class="inp_form_title">
+                              Admin Login
+                    </div>
+                   <form action="" method="post">
+                       {% csrf_token %}
+                       <div class="container">
+                           <div class="row inp_form">
+                              <input type="email" placeholder="email" name ="admin_email" required>
+                          </div>
+                           <div class="row inp_form">
+                              <input type="password" placeholder="password" name ="admin_password" required>
+                          </div>
+                           <div align="center">
+                              <input type="submit" value="Login">
+                          </div>
+                       </div>
+
+                   </form>
+                </div>
+
+          </div>
+    </div>
+{% endblock %}

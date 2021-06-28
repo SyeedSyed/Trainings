@@ -1,0 +1,95 @@
+.center{
+            padding: 20px;
+            text-align: center;
+        }
+        .nav_cus{
+            background-color: #859ce0;
+            border-radius: 20px;
+        }
+        div{
+            width: 90%;
+            display: inline-block;
+            margin: 0 auto;
+
+        }
+        #mainimg{
+            width: 200px;
+            height: 50px;
+            background-color: firebrick;
+        }
+
+        .titleimg{
+            width: 25%;
+        }
+        .titlediv{
+            width: 70%;
+        }
+
+        #maintitle{
+            font-family: Helvetica, Arial, sans-serif;
+            font-weight: bold;
+            color: teal;
+        }
+
+        .title_desc{
+            color:green;
+            font:30px solid Helvetica, Arial, sans-serif;
+        }
+        a:hover{
+            background-color: mistyrose;
+            width: 100px;
+            height: 40px;
+            border-radius: 20px;
+            font-weight: bold;
+            font-size: 18px;
+
+        }
+        a[href]{
+            text-align: center;
+            width: 12%;
+        }
+        input[placeholder]{
+
+            background-color: lightcyan;
+            border-radius: 10px;
+            margin-top:20px;
+            height: 30%;
+            width: 90%;
+        }
+        input[type="submit"]{
+            background-color: #1e7b1e;
+            border-radius: 10px;
+            margin-top:20px;
+            height: 30%;
+            width: 70%;
+        }
+
+        .reg_form_title{
+            color: #002080;
+            font:20px Helvetica, Arial, sans-serif;
+            height: 30%;
+            width: 90%;
+        }
+        .reg_form_bg{
+            width: 30%;
+            background-color: cyan;
+            border-radius: 20px;
+            padding: 20px;
+            margin-right: 50px;
+
+        }
+
+        .log_form_title{
+            color: #002080;
+            font:20px Helvetica, Arial, sans-serif;
+            height: 30%;
+            width: 90%;
+        }
+        .log_form_bg{
+            width: 30%;
+            background-color: #85b3e0;
+            border-radius: 20px;
+            padding: 20px;
+            margin-left: 50px;
+            float: right;
+        }

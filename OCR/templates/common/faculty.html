@@ -1,0 +1,35 @@
+{% extends 'common/common.html' %}
+    {% load static %}
+    {% block menu %}
+        {% include 'common/menu.html' %}
+    {% endblock %}
+
+    {% block content %}
+        <h1 style="color: lightseagreen; text-align: center;">Faculty</h1>
+        <div class="center" style="width: 90%; ">
+            <div class = "reg_form_bg">
+                <form method="post" action="{% url 'faculty' %}">
+                    {% csrf_token %}
+                    <div class="reg_form_title" ><h3>Registration</h3></div>
+                    <div><input type="text" placeholder="name" name="name" required></div>
+                    <div><input type="email" placeholder="abc@xyz.com" name="email" required></div>
+                    <div><input type="number" placeholder="mobile" name="mobile" required></div>
+                    <div><input type="password" placeholder="password" name="password" required></div>
+                    <div><input type="submit" value="Register"></div>
+                </form>
+                    {% if message %}
+                        <div class="reg_form_title" ><h3>Registration Successful</h3></div>
+                    {% endif %}
+            </div>
+            <div class = "log_form_bg">
+                <form method="post" action="{% url 'faculty' %}">
+                    {% csrf_token %}
+                    <div class="log_form_title" ><h3>Login</h3></div>
+                    <div><input type="email" placeholder="abc@xyz.com" name="email" required></div>
+                    <div><input type="password" placeholder="password" name="password" required></div>
+                    <div><input type="submit" value="Login"></div>
+                </form>
+            </div>
+
+        </div>
+    {% endblock %}

@@ -1,0 +1,30 @@
+{% extends 'common/common.html' %}
+
+{% block menu %}
+    {% include 'common/menu.html' %}
+{% endblock %}
+
+{% load static %}
+
+{% block content %}
+    <div class="container">
+          <div class="row">
+                <div class="col">
+                    <img class="content_img" src="{% static 'images/Prog_Img.jpeg' %}">
+                </div>
+                <div class="col content_text">
+                    <div>
+                        <p>
+                            <span class="content_sub_title" >About Sathya Technologies</span>
+                        </p>
+                        <p>
+                            At Satya technologies you are guaranteed best in
+                            class training as we team up the most efficient,
+                            professional and dedicated trainers who are subject
+                            matter experts in their respective area of specialization.
+                        </p>
+                    </div>
+                </div>
+          </div>
+    </div>
+{% endblock %}
