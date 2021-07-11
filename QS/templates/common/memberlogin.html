@@ -1,0 +1,81 @@
+{% extends 'common/common.html' %}
+
+{% block menu %}
+    {% include 'common/menu.html' %}
+{% endblock %}
+
+{% load static %}
+
+{% block content %}
+    <div class="container">
+
+
+          <div class="row">
+
+
+                <div class="col inp_form_std inp_form_reg" style="">
+                    <div class="inp_form_title">
+                              Member Registration
+                    </div>
+                   <form action="#" method="post" >
+                       {% csrf_token %}
+                       <div class="container">
+                          <div class="row inp_form">
+                              <input type="text" placeholder="name" name ="student_name" value="{{ data.0 }}" required>
+                          </div>
+                           <div class="row inp_form">
+                              <input type="email" placeholder="email" name ="student_email" value="{{ data.1 }}" required>
+                          </div>
+                           <div class="row inp_form">
+                              <input type="number" placeholder="contact" name ="student_contact" value="{{ data.2 }}" required>
+                          </div>
+                           <div class="row inp_form">
+                              <input type="password" placeholder="password" name ="student_password" required>
+                          </div>
+                           <div align="center">
+                              <input type="submit" value="Register">
+                          </div>
+                           {% if message %}
+                            <div class="inp_form_title text-danger">
+                                      {{ message }}
+                            </div>
+                            {% endif %}
+                            {% if data.3 %}
+                            <div class="inp_form_title text-danger">
+                                      {{ data.3 }}
+                            </div>
+                            {% endif %}
+                            {% if success %}
+                            <div class="inp_form_title text-success">
+                                      {{ success }}
+                            </div>
+                            {% endif %}
+                       </div>
+
+                   </form>
+                </div>
+                <div class="col inp_form_std inp_form_log">
+                    <div class="inp_form_title">
+                              Student Login
+                    </div>
+                   <form action="" method="post">
+                       {% csrf_token %}
+                       <div class="container">
+                           <div class="row inp_form">
+                              <input type="email" placeholder="email" name ="student_email" required>
+                          </div>
+                           <div class="row inp_form">
+                              <input type="password" placeholder="password" name ="student_password" required>
+                          </div>
+                           <div align="center">
+                              <input type="submit" value="Login">
+                          </div>
+
+                       </div>
+
+                   </form>
+                </div>
+
+          </div>
+    </div>
+{% endblock %}

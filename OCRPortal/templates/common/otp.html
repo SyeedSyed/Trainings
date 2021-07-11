@@ -8,19 +8,42 @@
 
 {% block content %}
 
-    <form action="" method="post">
-        <div class="container">
-                  <div class="row">
-                        <div class="inp_form_title">
-                                  Enter OTP
+    <form action="{% url 'validate_otp' %}" method="post">
+
+    {% csrf_token %}
+        <div class="container" style="width: 250px;" >
+
+                    <div class="row student_otp bg-info" style="border-radius: 20px;">
+                        <div class="col">
+                            {% if messages %}
+                                {% for message in messages%}
+                                    We sent an OTP to the number {{ message }}
+                                    <input type="hidden" value="{{ message }}" name="contact">
+                                {% endfor %}
+                            {% endif %}
+
                         </div>
-                        <div align="center" style="margin-bottom: 10px;">
-                                <input type="number" placeholder="OTP" name ="student_otp">
-                        </div>
-                        <div align="center">
-                                  <input type="submit" value="Verify">
-                        </div>
+                    </div>
+
+
+                  <div class="row student_otp">
+                      <div class="col" >
+                          <input type="password" placeholder="Enter 6-Digit OTP" max="6" min="6" name="student_otp" required
+                     class="form-control">
+                      </div>
                   </div>
+                  <div class="row student_otp" >
+                      <div class="col" >
+                          <input type="submit" value="Verify">
+                      </div>
+                  </div>
+                  {% if err_otp %}
+                      <div class="row student_otp bg-danger" style="border-radius: 20px;">
+                        <div class="col">
+                            {{ err_otp }}
+                        </div>
+                    </div>
+                  {% endif %}
         </div>
     </form>
 {% endblock %}

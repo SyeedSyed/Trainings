@@ -1,0 +1,28 @@
+{% extends 'common/common.html' %}
+
+{% block menu %}
+{% include 'common/menu.html' %}
+{% endblock %}
+
+{% load static %}
+
+{% block content %}
+<form action="{% url 'runchart' %}" method="post">
+    {% csrf_token %}
+    <div class="container">
+        {% if graph %}
+        <div class="row">
+            <div class="col" style="margin-top: 20px;">
+                {{ graph }}
+                <img src="data:image/png;base64,{{ graph }}" height="250" , width="250">
+            </div>
+        </div>
+        {% endif %}
+        <div class=" row inp_form">
+            <div class="col">
+                <input type="submit" value="Run">
+            </div>
+        </div>
+    </div>
+</form>
+{% endblock %}

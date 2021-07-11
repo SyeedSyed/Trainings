@@ -1,0 +1,28 @@
+{% extends 'common/common.html' %}
+
+{% block menu %}
+    {% include 'common/menu.html' %}
+{% endblock %}
+
+{% load static %}
+
+{% block content %}
+    <div class="container">
+          <div class="row">
+                <div class="col">
+                    <img class="content_img" src="{% static 'images/Logo7.jpeg' %}">
+                </div>
+                <div class="col content_text">
+                    <div>
+                        <p>
+                            <span class="content_sub_title">Welcome to QuickServices</span>
+                        </p>
+                        <p>
+                            We offer one stop solutions and services for diverse customers including individual and employers.
+
+                        </p>
+                    </div>
+                </div>
+          </div>
+    </div>
+{% endblock %}
