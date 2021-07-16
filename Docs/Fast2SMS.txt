@@ -1,0 +1,8 @@
+—————
+DEV API
+ - API Key
+  - Read API Documentation - Click Here
+  - Bulk SMS
+  - POST Method
+  - Copy Code
+  - Paste on python file

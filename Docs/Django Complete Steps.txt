@@ -1,0 +1,96 @@
+Django Complete Project Steps:
+
+Step1 : Create a new project.
+
+File -> New Project -> 
+	- Give Project Name
+	- Select Existing Interpreter
+	- Give App name
+
+Output - New project created.
+
+Step2 : Create multiple apps we need inside project.
+	- Goto Terminal
+		- django-admin startapp student
+		- django-admin startapp faculty
+		- django-admin startapp common
+
+Output - Apps created
+
+
+Step3 : Create default urls.py to all newly created apps.
+	
+		from django.urls import path
+
+		urlpatterns = [
+    
+		]
+
+Step4 : Now include all app urls into project urls.py
+
+	from django.urls import path
+	from django.urls import include
+
+	urlpatterns = [
+	    path('',include('common.urls')),			#entry point
+	    path('ocr_admin/',include('common.urls')),
+	    path('faculty/',include('common.urls')),
+	    path('student/',include('common.urls')),
+	]
+
+Step5 : Create template folders for each app.
+
+Step6 : Create static folders for each app and respective images, css, js and audio/video folders as needed.
+
+Step7 : Now start building up common app inside templates/common "common.html" & common/static/css "MyStyle.css"
+	
+	- Create a common page with
+		- Title
+		- Menu (Block statement specific to app). Implemented using extends & include. Includes from menu.html.
+		- Content (Block statement for app). Implemented using extends in app home page.
+		- Footer 
+
+Step8 : Include Stylesheets
+	
+	- Bootstrap	:  
+		- Goto https://getbootstrap.com/
+		- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+	
+	- MyStyle 	: 
+		- <link rel="stylesheet" href="{% static 'css/MyStyles.css' %}">
+		 
+
+
+Step9 : Goto Project -> settings.py -> Databases . Change the Db name to MyDB.sqlite3
+		DATABASES = {
+    			'default': {
+        		'ENGINE': 'django.db.backends.sqlite3',
+        		'NAME': BASE_DIR / 'MyDB.sqlite3',
+    			}
+		}
+
+
+Step 10: Create Model in respective app. Eg. Student
+	 - student -> models.py -> 
+	class RegistrationModel(models.Model):
+    		std_name = models.CharField(max_length=50,null=False)
+    		std_contact = models.IntegerField(unique=True,null=False)
+    		std_email = models.CharField(max_length=50,unique=True,null=False)
+    		std_password = models.CharField(max_length=20,null=False)
+   	 	std_otp = models.IntegerField(null=False,default=000000)
+    		std_otp_sts=models.CharField(max_length=10,default='Pending',null=False)
+   	 	std_reg_date = models.DateTimeField(auto_now_add=True) 
+
+	
+
+	
+Step11 : Now Makemigrations and Migrate
+	- python manage.py makemigrations
+	- python manage.py migrate
+
+
+
+
+
+
+

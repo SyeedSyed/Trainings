@@ -1,0 +1,39 @@
+{% load static %}
+<html>
+
+<head>
+    <title>
+        S3 Bucket Demo
+    </title>
+</head>
+
+<body>
+    <table border='2'>
+        <tr>
+            <th colspan="2">
+                <h3>Image</h3>
+            </th>
+            <th>
+                <h3>Name</h3>
+            </th>
+        </tr>
+        <tr>
+            <td colspan="2">
+                <img src="{% static 'images/Charminar.jpeg' %}">
+            </td>
+            <td>
+                <h2> Charminar </h2>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                <img src="{% static 'images/TajMahal.jpeg' %}">
+            </td>
+            <td>
+                <h2> Taj Mahal </h2>
+            </td>
+        </tr>
+    </table>
+</body>
+
+</html>
